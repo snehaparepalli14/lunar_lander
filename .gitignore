@@ -1,0 +1,7 @@
+# Local Python environment and generated Python files
+.venv/
+__pycache__/
+*.py[cod]
+
+# Experiment outputs are generated locally and should not be committed by default.
+outputs/

@@ -1,0 +1,9 @@
+# Reinforcement-learning environment
+gymnasium[box2d]
+
+# Neural networks for the DQN and DDQN agents
+torch
+
+# Numerical calculations and plotting
+numpy
+matplotlib
