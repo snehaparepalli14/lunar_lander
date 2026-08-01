@@ -1,7 +1,29 @@
-# Local Python environment and generated Python files
+# ── Virtual environments ──────────────────────────────────────────────────
 .venv/
+venv/
+# matches drl_mac_env/, myenv/, test_env/, etc.
+*env/
+
+# ── Python bytecode ───────────────────────────────────────────────────────
 __pycache__/
+# covers .pyc, .pyo, .pyd
 *.py[cod]
 
-# Experiment outputs are generated locally and should not be committed by default.
+# ── Experiment outputs (generated locally, not committed) ─────────────────
 outputs/
+# saved model weights
+*.pt
+# saved metrics arrays
+*.npz
+# sklearn / joblib artefacts
+*.joblib
+
+# ── Jupyter checkpoints ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── macOS junk ────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Data directories ──────────────────────────────────────────────────────
+*data/
+data/

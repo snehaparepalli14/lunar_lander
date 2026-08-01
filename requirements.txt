@@ -1,9 +1,21 @@
-# Reinforcement-learning environment
-gymnasium[box2d]
+# # Reinforcement-learning environment
+# gymnasium[box2d]
 
-# Neural networks for the DQN and DDQN agents
-torch
+# # Neural networks for the DQN and DDQN agents
+# torch
 
-# Numerical calculations and plotting
-numpy
-matplotlib
+# # Numerical calculations and plotting
+# numpy
+# matplotlib
+
+gymnasium[box2d]==0.29.1
+torch>=2.1.0
+torchvision
+torchaudio
+numpy>=1.24.0
+matplotlib>=3.7.0
+pandas>=2.0.0
+ipykernel>=6.25.0
+jupyter>=1.0.0
+tqdm>=4.65.0
+swig

@@ -55,6 +55,15 @@ class TrainingMetrics:
     mean_losses: list[float]
 
 
+def get_device() -> torch.device:
+    """Return the best available device: CUDA > MPS (Apple GPU) > CPU."""
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+    return torch.device("cpu")
+
+
 def set_all_seeds(seed: int) -> None:
     """Seed Python, NumPy, and PyTorch for reproducible experiments."""
     random.seed(seed)
@@ -62,6 +71,7 @@ def set_all_seeds(seed: int) -> None:
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
+    # MPS uses the CPU RNG; torch.manual_seed above covers it.
 
 
 def make_environment(environment_name: EnvironmentName) -> gym.Env:
@@ -151,7 +161,8 @@ def train_one_experiment(
 ) -> tuple[DQNAgent, TrainingMetrics]:
     """Train one algorithm/environment pair and collect plot-ready metrics."""
     set_all_seeds(training_config.seed)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = get_device()
+    print(f"  Using device: {device}")
     environment = make_environment(environment_name)
     agent = build_agent(algorithm, dqn_config, training_config.seed, device)
     metrics = TrainingMetrics([], [], [], [], [])
