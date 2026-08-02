@@ -129,11 +129,11 @@ Credit: Was r caused by action a, or by the silent "do nothing"?  ✗
 ### Final Training Results — Colab (Episode 700):
 
 | Algorithm | Environment | Final Reward | Final Success Rate |
-|-----------|-------------|-------------|-------------------|
-| DQN | Original | 263.2 | 49% |
-| DQN | Modified | 275.2 | 47% |
-| DDQN | Original | 275.3 | **71%** |
-| DDQN | Modified | 25.3 | 51% |
+| -----------| -------------| --------------| --------------------|
+| DQN       | Original    | 263.2        | 49%                |
+| DQN       | Modified    | 275.2        | 47%                |
+| DDQN      | Original    | 275.3        | **71%**            |
+| DDQN      | Modified    | 25.3         | 51%                |
 
 ### Analysis by Metric:
 
